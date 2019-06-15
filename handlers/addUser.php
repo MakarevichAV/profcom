@@ -3,7 +3,15 @@
     include($_SERVER['DOCUMENT_ROOT'].'/php/connect.php');
 
     // Подключение title 
-    $title = 'Обращение';
+    $title = 'Заявка на регистрацию';
+    
+    // Данные из массива $_POST
+    $fio = $_POST['fio'];
+    $tel = $_POST['tel'];
+    $email = $_POST['email'];
+    $position = $_POST['position'];
+    $unit = $_POST['unit'];
+    d($_POST);
 
     $message = ''; // сюда будет записываться сообщение для пользователя
     // Проверка на пустоту массива $_POST
@@ -22,11 +30,6 @@
 
         if ($resultEmpty == true) {   // если все инпуты заполнены (не пусты)
 
-            // Данные из массива $_POST
-            $fio = $_POST['fio'];
-            $tel = $_POST['tel'];
-            $email = $_POST['email'];
-
             $message = "
                 <div class='content'>
                 <h2 class='margin-top50 margin-bottom10'>Здравствуйте</h2>
@@ -34,7 +37,6 @@
                 <p class='content-text margin-bottom20'>Благодарим Вас за заявку. Мы свяжемся с вами по телефону <span class='bold'>$tel</span> или по электронной почте <span class='bold'>$email</span></p>
                 </div>
             ";
-            // d($_POST);
 
         } else {
             $message = "
@@ -52,6 +54,24 @@
         ";
     }
 
+
+    // отправка данных пользователя в базу (в таблицу wishing_users)
+
+    $qr = "INSERT INTO `wishing_users` ( 
+                                        `fio`, 
+                                        `position`, 
+                                        `unit`, 
+                                        `tel`, 
+                                        `email`
+                                        ) 
+                                VALUES (
+                                        '${'fio'}', 
+                                        '${'position'}', 
+                                        '${'unit'}', 
+                                        '${'tel'}', 
+                                        '${'email'}'
+                                        )";
+    $result = mysqli_query( $connect, $qr );
 
 
     include($_SERVER['DOCUMENT_ROOT'].'/modules/head.php');

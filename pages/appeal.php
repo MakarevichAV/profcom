@@ -25,7 +25,7 @@
             <input class="user-input margin-bottom10" type="text" name="fio" placeholder="ФИО">
             <input class="user-input margin-bottom10" type="text" name="tel" placeholder="Телефон без пробелов с 8">
             <input class="user-input margin-bottom10" type="text" name="email" placeholder="e-mail">
-            <textarea class="appeal margin-bottom10" name="appeal" rows="8"></textarea>
+            <textarea class="appeal margin-bottom10" name="appeal" rows="8" placeholder="Напишите здесь Ваш вопрос или опишите проблему"></textarea>
             <input class="user-input margin-bottom10 submit" type="submit" value="Отправить сообщение">
         </form>
     </div>

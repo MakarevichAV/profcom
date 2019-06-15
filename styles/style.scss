@@ -366,6 +366,9 @@ $border: 1px solid red;
 body {
     background: rgb(240, 240, 240);
 }
+.wrapper {
+    position: relative;
+}
 .wrapper, .sub-footer {
     max-width: 1400px;
     margin: 0 auto;
@@ -532,6 +535,30 @@ body {
     }
 }
 
+.error {
+    font-size: 12px;
+    font-family: $font-georgia;
+    color: red;
+}
+
+.enter {
+    text-align: right;
+    font-size: 16px;
+    font-family: $font-georgia;
+    // font-style: italic;
+    font-weight: bold;
+    color: $blue;
+    cursor: pointer;
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(59, 110, 139, 0.781);
+}
 
 
 
@@ -546,6 +573,9 @@ body {
 }
 .margin-top50 {
     margin-top: 50px;
+}
+.margin-top10 {
+    margin-top: 10px;
 }
 .margin-bottom20 {
     margin-bottom: 20px;

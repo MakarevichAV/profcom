@@ -1,5 +1,8 @@
 <?php
-    // здесь будет подключение к базе данных
+    // Подключение к базе данных
+    $connect = mysqli_connect('localhost', 'root', '', 'profcom');
+    mysqli_set_charset($connect, "utf8");
+
 
     // Функция для вывода массивов
     function d($arr) {

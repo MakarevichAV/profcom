@@ -93,15 +93,17 @@
         <p class="margin-bottom10"><span class="bold">Адрес профсоюза:</span> 140080, Московская обл., г. Лыткарино промзона Тураево, стр. 7 </p>
         <p class="margin-bottom20"><span class="bold">Место нахождения:</span> Корпус №1, 3-й этаж над стендом Ц-3, комната инженеров-электриков </p>
     </div>
-    <h2 id="join" class="margin-bottom50 margin-top50">Вступайте в профсоюз</h2>
+    <h2 id="join" class="margin-bottom20 margin-top50">Вступайте в профсоюз</h2>
     <div class="content-text margin-bottom20">
         <form class="user-form" action="/handlers/addUser.php" method="post">
+            <p class="margin-bottom20">Все поля обязательны для заполнения</p>
             <input class="user-input margin-bottom10" type="text" name="fio" placeholder="ФИО">
             <input class="user-input margin-bottom10" type="text" name="position" placeholder="Должность">
             <input class="user-input margin-bottom10" type="text" name="unit" placeholder="Структурное подразделение">
             <input class="user-input margin-bottom10" type="text" name="tel" placeholder="Телефон без пробелов с 8">
             <input class="user-input margin-bottom10" type="text" name="email" placeholder="e-mail">
             <input class="user-input margin-bottom10 submit" type="submit" value="Отправить заявку">
+            <p>Если у Вас не получается заполнить форму, то свяжитесь с нами по телефону 26-44 или электронной почте profcom_ciam@gmail.com</p>
         </form>
     </div>
 </div>

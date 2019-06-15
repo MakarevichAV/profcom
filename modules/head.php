@@ -28,7 +28,14 @@
                 <a href="<?=$main?>#contact" class="menu-item margin-bottom10">Контакты</a>
                 <a href="/pages/appeal.php" class="menu-item">Обращение</a>
                 <a href="<?=$main?>#join" class="menu-item">Вступить<br />в профсоюз</a>
+
             </div>
+        </div>
+        <p class="enter margin-top10">Войти</p>
+
+        <!-- всплывающее окно входа в систему -->
+        <div class="popup">
+            
         </div>
         
 

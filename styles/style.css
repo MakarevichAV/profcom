@@ -345,6 +345,10 @@ body {
   background: #f0f0f0;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .wrapper, .sub-footer {
   max-width: 1400px;
   margin: 0 auto;
@@ -571,12 +575,40 @@ body {
   color: white;
 }
 
+.error {
+  font-size: 12px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: red;
+}
+
+.enter {
+  text-align: right;
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #3b6e8b;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(59, 110, 139, 0.781);
+}
+
 .margin-bottom50 {
   margin-bottom: 50px;
 }
 
 .margin-top50 {
   margin-top: 50px;
+}
+
+.margin-top10 {
+  margin-top: 10px;
 }
 
 .margin-bottom20 {
