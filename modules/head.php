@@ -35,7 +35,16 @@
 
         <!-- всплывающее окно входа в систему -->
         <div class="popup">
-            
+            <div class="window-popup">
+                <div class="cross"></div>
+                <form action="enter.php">
+                    <p class="enter-text margin-bottom20">Войти могут только зарегистрированные члены профсоюза!</p>
+                    <a href="<?=$main?>#join" class="join inline-block margin-bottom20">Вступить в профсоюз</a>
+                    <input class="enter-input margin-bottom10" type="text" name="login" placeholder="Логин">
+                    <input class="enter-input margin-bottom10" type="password" name="password" placeholder="Пароль">
+                    <input class="enter-input margin-bottom10 submit" type="submit" value="Войти">
+                </form>
+            </div>
         </div>
         
 

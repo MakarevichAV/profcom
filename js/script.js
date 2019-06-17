@@ -94,10 +94,28 @@ $('textarea').keyup( function () {
 
 
             // Всплывающее окно входа 
-// при клике на "Войти"
-
+// при клике на "Войти" открытие всплывающего окна popup
 let enter = $('.enter');
+let popup = $('.popup');
 
 enter.click( function () {
-    
+
+    popup.addClass('flex');
+
+} );
+
+// закрытие popup при нажатии на крестик или на "Вступить в профсоюз" или на Esc
+let cross = $('.cross');
+let join = $('.join');
+
+cross.click( function () {
+
+    popup.removeClass('flex');
+
+} );
+
+join.click( function () {
+
+    popup.removeClass('flex');
+
 } );

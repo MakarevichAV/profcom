@@ -528,11 +528,6 @@ body {
     .appeal {
         resize: vertical;
     }
-    .submit {
-        background: $blue;
-        cursor: pointer;
-        color: white;
-    }
 }
 
 .error {
@@ -552,13 +547,86 @@ body {
 }
 
 .popup {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(59, 110, 139, 0.781);
+    background: rgba(227, 244, 252, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    .window-popup {
+        background: #ffffff;
+        border: 4px solid $blue;
+        padding: 25px 15px;
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        position: relative;
+        .cross {
+            width: 35px;
+            height: 35px;
+            background: $blue;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            cursor: pointer;
+            &:before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                content: "";
+                width: 24px;
+                height: 4px;
+                background: #ffffff;
+                transform: rotate(45deg);
+            }
+            &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+                content: "";
+                width: 24px;
+                height: 4px;
+                background: #ffffff;
+                transform: rotate(-45deg);
+            }
+        }
+        .enter-input {
+            width: 100%;
+            border: 2px solid $blue;
+            padding: 5px 15px;
+            outline: none;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .enter-text {
+            font-size: 22px;
+            font-family: $font-georgia;
+            color: $dark-grey;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-family: $font-georgia;
+            font-size: 18px;
+            padding: 10px;
+            background: $blue;
+        }
+    }
 }
+
+
 
 
 
@@ -597,4 +665,15 @@ body {
 }
 .align-center {
     text-align: center;
+}
+.submit {
+    background: $blue;
+    cursor: pointer;
+    color: white;
+}
+.inline-block {
+    display: inline-block;
+}
+.flex {
+    display: flex;
 }
