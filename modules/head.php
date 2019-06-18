@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="nav">
-                <a href="/index.php" class="menu-item">Главная</a>
-                <a href="<?=$main?>#politics" class="menu-item">Цели<br />и задачи</a>
-                <a href="/pages/news.php" class="menu-item">Новости</a>
-                <a href="<?=$main?>#contact" class="menu-item margin-bottom10">Контакты</a>
-                <a href="/pages/appeal.php" class="menu-item">Обращение</a>
+                <a href="/index.php" class="menu-item margin-bottom-mob15">Главная</a>
+                <a href="<?=$main?>#politics" class="menu-item margin-bottom-mob15">Цели<br />и задачи</a>
+                <a href="/pages/news.php" class="menu-item margin-bottom-mob15">Новости</a>
+                <a href="<?=$main?>#contact" class="menu-item margin-bottom-mob15">Контакты</a>
+                <a href="/pages/appeal.php" class="menu-item margin-bottom-mob15">Обращение</a>
                 <a href="<?=$main?>#join" class="menu-item">Вступить<br />в профсоюз</a>
             </div>
             <div class="menu-button">

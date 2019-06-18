@@ -706,6 +706,8 @@ body {
           box-sizing: border-box;
   background: #3b6e8b;
   position: relative;
+  cursor: pointer;
+  display: none;
 }
 
 .menu-button .line1 {
@@ -802,5 +804,32 @@ body {
 
 .block {
   display: block;
+}
+
+@media (max-width: 1050px) {
+  .menu-button {
+    display: block;
+  }
+  .head {
+    position: relative;
+  }
+  .head .nav {
+    position: absolute;
+    right: -100px;
+    top: 0;
+    display: block;
+    background: rgba(59, 110, 139, 0.8);
+    z-index: 1;
+    padding: 20px 10px;
+  }
+  .head .nav .menu-item {
+    display: block;
+    background: rgba(193, 193, 193, 0.8);
+    padding: 10px;
+    color: #ffffff;
+  }
+  .margin-bottom-mob15 {
+    margin-bottom: 15px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
