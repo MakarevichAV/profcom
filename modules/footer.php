@@ -29,6 +29,7 @@
     <div class="sub-footer">
         Copyright © 2019, www.ciamprof.com Все права защищены
     </div>
+    <div href="#top" class="arrow-up"></div>
 
         <!-- Подключение скриптов -->
     <!-- Подключение VUE.JS -->

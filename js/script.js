@@ -119,3 +119,32 @@ join.click( function () {
     popup.removeClass('flex');
 
 } );
+
+
+            // Действия со стрелкой вверх "в начало страницы" 
+// Появление стрелки вверх при пролистывании
+let arrow = $('.arrow-up');
+
+$(window).scroll( function () {
+
+    if ( window.scrollY > 200 ) {
+        arrow.addClass('block');
+    } else {
+        arrow.removeClass('block');
+    }
+
+} );
+
+// Клик по стрелке и переход в начало страницы
+arrow.click( function () {
+
+    let target = $(this).attr('href');
+
+    if ( target != undefined && target != '' ) {
+        $('html').animate( {
+            scrollTop: $(target).offset().top
+        }, 400 );
+    }
+    return false;
+
+} );

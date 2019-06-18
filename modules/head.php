@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/styles/style.css">
     <title><?=$title?></title>
 </head>
-<body>
+<body id="top">
     <div class="wrapper">
         <div class="head">
             <div class="logo">
@@ -28,7 +28,11 @@
                 <a href="<?=$main?>#contact" class="menu-item margin-bottom10">Контакты</a>
                 <a href="/pages/appeal.php" class="menu-item">Обращение</a>
                 <a href="<?=$main?>#join" class="menu-item">Вступить<br />в профсоюз</a>
-
+            </div>
+            <div class="menu-button">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
         </div>
         <p class="enter margin-top10">Войти</p>
