@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 15 2019 г., 22:29
--- Версия сервера: 10.1.38-MariaDB
--- Версия PHP: 7.3.2
+-- Время создания: Июн 19 2019 г., 23:43
+-- Версия сервера: 10.1.40-MariaDB
+-- Версия PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,6 +35,7 @@ CREATE TABLE `registered` (
   `unit` varchar(50) NOT NULL,
   `tel` varchar(25) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `login` varchar(250) NOT NULL,
   `password` varchar(400) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -43,11 +44,12 @@ CREATE TABLE `registered` (
 -- Дамп данных таблицы `registered`
 --
 
-INSERT INTO `registered` (`id`, `fio`, `position`, `unit`, `tel`, `email`, `password`, `date`) VALUES
-(1, 'макаревич', 'инженер', '40101-4', '89774625877', 'makarevich.a.v@yandex.ru', 'макар', '0000-00-00'),
-(2, 'петров', 'инженер', '40101-4', '89998446939', 'ksyunya.boginskaya@mail.ru', 'ксюня', '0000-00-00'),
-(4, 'Иванов Иван', 'электрик', '406', '89999999999', 'ivanov.i.i@gmail.com', 'ивановиван', '0000-00-00'),
-(5, 'Иванов Иван', 'электрик', '406', '89999999999', 'ivanov.i.i@gmail.com', 'ивановиван', '2019-06-15');
+INSERT INTO `registered` (`id`, `fio`, `position`, `unit`, `tel`, `email`, `login`, `password`, `date`) VALUES
+(1, 'макаревич', 'инженер', '40101-4', '89774625877', 'makarevich.a.v@yandex.ru', '', 'макар', '0000-00-00'),
+(2, 'петров', 'инженер', '40101-4', '89998446939', 'ksyunya.boginskaya@mail.ru', '', 'ксюня', '0000-00-00'),
+(4, 'Иванов Иван', 'электрик', '406', '89999999999', 'ivanov.i.i@gmail.com', '', 'ивановиван', '0000-00-00'),
+(5, 'Иванов Иван', 'электрик', '406', '89999999999', 'ivanov.i.i@gmail.com', '', 'ивановиван', '2019-06-15'),
+(7, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', '2019-06-19');
 
 -- --------------------------------------------------------
 
@@ -69,7 +71,9 @@ CREATE TABLE `wishing_users` (
 --
 
 INSERT INTO `wishing_users` (`id`, `fio`, `position`, `unit`, `tel`, `email`) VALUES
-(2, 'Макаревич Александр Валерьевич', 'Инженер-электрик', '40101-4', '89774625877', 'makarevich.a.v@yandex.ru');
+(2, 'Макаревич Александр Валерьевич', 'Инженер-электрик', '40101-4', '89774625877', 'makarevich.a.v@yandex.ru'),
+(3, 'Александр', 'Инженер электрик', 'advav', '89774625877', 'makarevich.a.v@yandex.ru'),
+(4, 'Александр', 'Инженер электрик', 'advav', '89774625877', 'makarevich.a.v@yandex.ru');
 
 --
 -- Индексы сохранённых таблиц
@@ -95,13 +99,13 @@ ALTER TABLE `wishing_users`
 -- AUTO_INCREMENT для таблицы `registered`
 --
 ALTER TABLE `registered`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `wishing_users`
 --
 ALTER TABLE `wishing_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
