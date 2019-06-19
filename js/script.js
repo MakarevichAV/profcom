@@ -45,7 +45,7 @@ function checkForEmpty(inp, text) {
 
 
 
-$('form').submit( function () {
+$('.form').submit( function () {
     
     let fio = $('[name="fio"]'),
         position = $('[name="position"]'),
@@ -69,7 +69,7 @@ $('form').submit( function () {
                 checkForEmpty(email);
                 checkForEmpty(textArea, 'Напишите хотя бы в двух словах');
     } else {
-        $('form').submit();
+        $('.form').submit();
     }
 
     return false;
@@ -148,3 +148,28 @@ arrow.click( function () {
     return false;
 
 } );
+
+
+            // Открытие и закрытие меню в мобильной верстке
+
+let clickExit = $('.cross-menu, .menu-item');
+let menuButton = $('.menu-button, .line');
+// let crossMenu = $('.cross-menu');
+// let menuItem = $('.menu-item');
+let nav = $('.nav');
+
+menuButton.click( function () {
+    // let nav = $('.nav');
+    nav.addClass('right-0');
+} );
+
+clickExit.click( function () {
+    nav.removeClass('right-0');
+} );
+
+$(document).click( function (e) {
+    if ( !nav.is(e.target) && !menuButton.is(e.target) ) {
+        nav.removeClass('right-0');
+    }
+} );
+

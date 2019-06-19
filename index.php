@@ -95,7 +95,7 @@
     </div>
     <h2 id="join" class="margin-bottom20 margin-top50">Вступайте в профсоюз</h2>
     <div class="content-text margin-bottom20">
-        <form class="user-form" action="/handlers/addUser.php" method="post">
+        <form class="form user-form" action="/handlers/addUser.php" method="post">
             <p class="margin-bottom20">Все поля обязательны для заполнения</p>
             <input class="user-input margin-bottom10" type="text" name="fio" placeholder="ФИО">
             <input class="user-input margin-bottom10" type="text" name="position" placeholder="Должность">

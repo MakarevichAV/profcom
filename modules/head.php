@@ -22,6 +22,7 @@
                 </div>
             </div>
             <div class="nav">
+                <div class="cross-menu"></div>
                 <a href="/index.php" class="menu-item margin-bottom-mob15">Главная</a>
                 <a href="<?=$main?>#politics" class="menu-item margin-bottom-mob15">Цели<br />и задачи</a>
                 <a href="/pages/news.php" class="menu-item margin-bottom-mob15">Новости</a>
@@ -30,9 +31,9 @@
                 <a href="<?=$main?>#join" class="menu-item">Вступить<br />в профсоюз</a>
             </div>
             <div class="menu-button">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
             </div>
         </div>
         <p class="enter margin-top10">Войти</p>

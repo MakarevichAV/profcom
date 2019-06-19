@@ -354,6 +354,8 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   background: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .head {
@@ -377,6 +379,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.head .nav .cross-menu {
+  display: none;
 }
 
 .head .nav .menu-item {
@@ -807,6 +813,9 @@ body {
 }
 
 @media (max-width: 1050px) {
+  .wrapper {
+    overflow: hidden;
+  }
   .menu-button {
     display: block;
   }
@@ -815,18 +824,61 @@ body {
   }
   .head .nav {
     position: absolute;
-    right: -100px;
+    right: -100%;
     top: 0;
     display: block;
     background: rgba(59, 110, 139, 0.8);
     z-index: 1;
-    padding: 20px 10px;
+    padding: 38px 10px 20px 10px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
   .head .nav .menu-item {
     display: block;
-    background: rgba(193, 193, 193, 0.8);
     padding: 10px;
     color: #ffffff;
+  }
+  .head .nav .cross-menu {
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+  .head .nav .cross-menu:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    width: 24px;
+    height: 4px;
+    background: #ffffff;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .head .nav .cross-menu:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    width: 24px;
+    height: 4px;
+    background: #ffffff;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .head .right-0 {
+    right: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
   .margin-bottom-mob15 {
     margin-bottom: 15px !important;

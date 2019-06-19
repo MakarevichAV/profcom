@@ -374,6 +374,7 @@ body {
     margin: 0 auto;
     padding: 0 15px;
     background: white;
+    box-sizing: border-box;
 }
 
 .head {
@@ -385,6 +386,9 @@ body {
     .nav {
         display: flex;
         align-items: center;
+        .cross-menu {
+            display: none;
+        }
         .menu-item {
             margin: 0 15px;
             font-size: 18px;
@@ -740,6 +744,9 @@ body {
 
 // media
 @media (max-width: 1050px) {
+    .wrapper {
+        overflow: hidden;
+    }
     .menu-button {
         display: block;
     }
@@ -747,19 +754,57 @@ body {
         position: relative;
         .nav {
             position: absolute;
-            right: -100px;
+            right: -100%;
             top: 0;
             display: block;
-            background: rgba(59, 110, 139, 0.8);;
-            // border: 1px solid $blue;
+            background: rgba(59, 110, 139, 0.8);
             z-index: 1;
-            padding: 20px 10px;
+            padding: 38px 10px 20px 10px;
+            transition: 0.3s;
             .menu-item {
                 display: block;
-                background: rgba(193, 193, 193, 0.8);
                 padding: 10px;
                 color: #ffffff;
             }
+            .cross-menu {
+                display: block;
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                cursor: pointer;
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    content: "";
+                    width: 24px;
+                    height: 4px;
+                    background: #ffffff;
+                    transform: rotate(45deg);
+                }
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    content: "";
+                    width: 24px;
+                    height: 4px;
+                    background: #ffffff;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .right-0 {
+            right: 0;
+            transition: 0.3s;
         }
     }
     .margin-bottom-mob15 {

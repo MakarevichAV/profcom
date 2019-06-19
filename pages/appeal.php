@@ -21,7 +21,7 @@
     </div>
     
     <div class="content-text margin-bottom20">
-        <form class="appeal-form" action="/handlers/addAppeal.php" method="post">
+        <form class="form appeal-form" action="/handlers/addAppeal.php" method="post">
             <input class="user-input margin-bottom10" type="text" name="fio" placeholder="ФИО">
             <input class="user-input margin-bottom10" type="text" name="tel" placeholder="Телефон без пробелов с 8">
             <input class="user-input margin-bottom10" type="text" name="email" placeholder="e-mail">
