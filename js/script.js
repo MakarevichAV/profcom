@@ -44,7 +44,7 @@ function checkForEmpty(inp, text) {
 };
 
 
-
+// Валидация форм отправки заявки о вступлении в профком и формы обращения
 $('.form').submit( function () {
     
     let fio = $('[name="fio"]'),
@@ -70,6 +70,25 @@ $('.form').submit( function () {
                 checkForEmpty(textArea, 'Напишите хотя бы в двух словах');
     } else {
         $('.form').submit();
+    }
+
+    return false;
+
+} );
+
+// Валидация формы входа в аккаунт
+$('.form-enter').submit( function () {
+    
+    let login = $('[name="login"]'),
+        password = $('[name="password"]');
+
+    if (    login.val() == '' || 
+            password.val() ==  '' 
+        ) {
+                checkForEmpty(login);
+                checkForEmpty(password);
+    } else {
+        $('.form-enter').submit();
     }
 
     return false;
