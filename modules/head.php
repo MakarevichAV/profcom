@@ -1,7 +1,83 @@
 <?php
-    if (!isset($main)) {
+    session_start();
+    $_SESSON = [    // *
+        'entEx' => 2//$_GET['exit']  // *
+    ];  // *
+    // session_destroy();
+    include($_SERVER['DOCUMENT_ROOT'].'/php/connect.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/php/functions.php');
+
+    if (!isset($main)) {   // Если на главной странице
         $main = '';
     }
+
+    if ( isset($_GET['exit']) ) {  // *
+        if ( $_GET['exit'] == true ) {
+            session_destroy();
+            $_GET['exit'] == false;
+            // d($_GET);
+        }
+    }
+
+    // Вход в аккаунт, проверка логина и пароля, открытие сессии
+    if ( !empty($_POST) ) {
+
+        if ( isset($_POST['login']) && isset($_POST['password']) ) {
+
+            $login = $_POST['login'];
+            $password = md5(md5($_POST['password']));
+
+            $login = 'admin';
+            $password = 'admin';
+
+            $qr = "SELECT * FROM `registered` WHERE `login` = '$login' AND `password` = '$password'";
+            $result = mysqli_query($connect, $qr);
+            $row = mysqli_fetch_assoc($result);
+
+            // d($result);
+
+            if ( mysqli_num_rows($result) == 1 ) {
+                
+                // if ( !isset($_SESSION) ) {
+                //     session_start();
+                // }
+
+                $_SESSION = [
+                    'user' => $row
+                ];
+
+            }
+
+        } else {
+            $error = 'Не правильный логин или пароль';    
+        }
+
+    }
+
+    // d($_GET);
+
+    if ( !empty($_SESSION['user']) ) {
+        $enterExit = "<p class='enter-exit exit margin-top10'>Выйти</p>";
+
+        $txtForUser = $_SESSION['user']['login'];
+
+        if ( $txtForUser == 'admin' ) {
+            $access = "
+                <div class='access'>
+                    <a class='admin-nav' href='/admin/applications.php'>Заявки</a>
+                    <a class='admin-nav' href='/admin/news.php'>Новости</a>
+                    <a class='admin-nav' href='/admin/appeal.php'>Обращения</a>
+                </div>
+            ";
+        }
+    } else {
+        $enterExit = "<p class='enter-exit enter margin-top10'>Войти</p>";
+    }
+
+    // d($_SESSION);
+
+    echo json_encode( $_SESSION['entEx'] ); // *
+    
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -13,8 +89,22 @@
     <title><?=$title?></title>
 </head>
 <body id="top">
+
+    <?php
+        if ( isset($access) ) {
+            echo $access;
+        }
+    ?>
+
     <div class="wrapper">
         <div class="head">
+            <p class="text-for-user">
+                <?php
+                    if ( isset($txtForUser) ) {
+                        echo $txtForUser;
+                    }
+                ?>
+            </p>
             <div class="logo">
                 <div class="logo-pic margin-right15"></div>
                 <div class="logo-text">
@@ -36,13 +126,13 @@
                 <div class="line line3"></div>
             </div>
         </div>
-        <p class="enter margin-top10">Войти</p>
+        <?=$enterExit?> <!-- Войти/Выйти -->
 
         <!-- всплывающее окно входа в систему -->
         <div class="popup">
             <div class="window-popup">
                 <div class="cross"></div>
-                <form action="enter.php">
+                <form class="form-enter" method="post">
                     <p class="enter-text margin-bottom20">Войти могут только зарегистрированные члены профсоюза!</p>
                     <a href="<?=$main?>#join" class="join inline-block margin-bottom20">Вступить в профсоюз</a>
                     <input class="enter-input margin-bottom10" type="text" name="login" placeholder="Логин">

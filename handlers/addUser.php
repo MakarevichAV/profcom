@@ -1,6 +1,7 @@
 <?php
     // Подключение коннекта с базой данных и функции для вывода массиввов
     include($_SERVER['DOCUMENT_ROOT'].'/php/connect.php');
+    // include($_SERVER['DOCUMENT_ROOT'].'/php/functions.php');
 
     // Подключение title 
     $title = 'Заявка на регистрацию';
@@ -11,7 +12,7 @@
     $email = $_POST['email'];
     $position = $_POST['position'];
     $unit = $_POST['unit'];
-    d($_POST);
+    // d($_POST);
 
     $message = ''; // сюда будет записываться сообщение для пользователя
     // Проверка на пустоту массива $_POST
