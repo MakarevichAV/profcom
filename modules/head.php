@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
     session_start();
     $_SESSON = [    // *
         'entEx' => 2//$_GET['exit']  // *
@@ -19,6 +20,15 @@
         }
     }
 
+=======
+    include($_SERVER['DOCUMENT_ROOT'].'/php/connect.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/php/functions.php');
+
+    if (!isset($main)) {
+        $main = '';
+    }
+
+>>>>>>> 008d517945e045f46a41fcad37e84c43ccaddc09
     // Вход в аккаунт, проверка логина и пароля, открытие сессии
     if ( !empty($_POST) ) {
 
@@ -38,20 +48,42 @@
 
             if ( mysqli_num_rows($result) == 1 ) {
                 
+<<<<<<< HEAD
                 // if ( !isset($_SESSION) ) {
                 //     session_start();
                 // }
+=======
+                session_start();
+>>>>>>> 008d517945e045f46a41fcad37e84c43ccaddc09
 
                 $_SESSION = [
                     'user' => $row
                 ];
 
+<<<<<<< HEAD
+=======
+                $txtForUser = $_SESSION['user']['login'];
+
+                // d($_SESSION);
+
+                if ( $txtForUser == 'admin' ) {
+                    $access = "
+                        <div class='access'>
+                            <a class='admin-nav' href='/admin/applications.php'>Заявки</a>
+                            <a class='admin-nav' href='/admin/news.php'>Новости</a>
+                            <a class='admin-nav' href='/admin/appeal.php'>Обращения</a>
+                        </div>
+                    ";
+                }
+
+>>>>>>> 008d517945e045f46a41fcad37e84c43ccaddc09
             }
 
         } else {
             $error = 'Не правильный логин или пароль';    
         }
 
+<<<<<<< HEAD
     }
 
     // d($_GET);
@@ -77,6 +109,11 @@
     // d($_SESSION);
 
     echo json_encode( $_SESSION['entEx'] ); // *
+=======
+    } else {
+        $error = 'Что-то пошло не так. Попробуйте еще раз.';
+    }
+>>>>>>> 008d517945e045f46a41fcad37e84c43ccaddc09
     
 ?>
 <!DOCTYPE html>
